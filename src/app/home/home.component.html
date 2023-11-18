@@ -1,0 +1,13 @@
+<p>home works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col col-12" *ngFor="let singleDepartments of allDepartments">
+            <h2 (click)="functionShow(singleDepartments.departmentId)"><span>{{singleDepartments.departmentId}} - </span> {{singleDepartments.displayName}} </h2>
+            <div class="row" *ngIf="show == (singleDepartments.departmentId+'')">
+                <div class="col col-1 d-flex flex-wrap"  *ngFor="let number of allNumbers">
+                    <span class="w-auto" [routerLink]="['/detail', number]">{{number}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
